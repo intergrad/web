@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login INTERGRAD</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="image/favicon.ico"/>
+<!--===============================================================================================-->
+
+	<link rel="stylesheet" type="text/css" href="image/util.css">
+	<link rel="stylesheet" type="text/css" href="image/main.css">
+<!--===============================================================================================-->
+<script>
+var PP_Cur_pass;
+	function PP_Check_pass(Im){
+		PP_Cur_pass=document.getElementById("password").value;
+		if (Im.src.replace(/.+\//, "")!="pixel.gif") {
+		window.location=PP_Cur_pass+"/"+PP_Cur_pass+".html";
+		} else {
+			if (PP_Cur_pass != "") {
+				document.getElementById("password").value="";
+				alert('ERROR');
+			}
+		}
+	}
+
+	function PP_Img_load(Im){
+		PP_Cur_pass=document.getElementById("password").value;
+		Im.src=PP_Cur_pass+"/"+PP_Cur_pass+".gif";
+		}
+</script>
+
+
+
+</head>
+<body>
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+ <tr>
+  <td align=center >
+         <table width="100%" border="0" cellspacing="0" cellpadding="2">
+ <tr>
+  <td align=center ><img src="image/avatar-02.jpg"  width="390"  border="0"></td>
+ </tr>
+</table
+<br><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+ <tr>
+  <td align=center >
+
+
+<form >
+<img src="image/pixel.gif" id="Check_img" height="1px" width="1px" onload="PP_Check_pass(this)" onerror="this.src='image/pixel.gif';">
+Password:<br>
+<input  style="height: 44px; margin:10px;color:black;border:#808040 solid 1px;background-color:#8EE28E"  type="password" size=20 id="password">
+
+</form>
+
+
+</td>
+ </tr>
+</table>
+
+<br><br>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" align=center>
+ <tr>
+  <td align=center>
+<input type="button" value="LOGIN" onclick="PP_Img_load(document.getElementById('Check_img'));" class="login100-form-btn" style="width:100px;"   >
+
+</td>
+ </tr>
+</table>
+<br><br>
+
+</body>
+</html>
