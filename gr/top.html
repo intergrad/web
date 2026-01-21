@@ -14,7 +14,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script>
 const realHash = "8805be0792c3d3873a4f7dd5d3be5f8f6234ca01e47d7c06b8c634aef481bd85"; // hash от "admin"
-const wrongUrl = "https://sansan.ucoz.org/load/2-1-0-19"; // ← КУДА перенаправлять при ошибке
+const wrongUrl = "https://intergrad.tilda.ws/tanki/"; // ← КУДА перенаправлять при ошибке
 function login() {
     const pass = document.getElementById("password").value;
     const hash = CryptoJS.SHA256(pass).toString();
@@ -158,3 +158,4 @@ Password:<br>
 
 </body>
 </html>
+
