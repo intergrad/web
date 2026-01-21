@@ -36,7 +36,83 @@ var PP_Cur_pass;
 </head>
 <body>
 
+<style>
+/* === Глобальные настройки === */
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
 
+/* Сбрасываем старые таблицы на максимум ширины */
+table {
+    width: 100%;
+}
+
+/* Аватар адаптивный */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Поле ввода */
+#password {
+    width: 90%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #808040;
+    background: #8EE28E;
+    border-radius: 6px;
+}
+
+/* Кнопка */
+.login100-form-btn {
+    padding: 12px 20px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Наведение */
+.login100-form-btn:hover {
+    background: #45A049;
+}
+
+/* === Адаптация под смартфоны === */
+@media (max-width: 600px) {
+
+    #password {
+        font-size: 16px;
+        width: 95%;
+    }
+
+    .login100-form-btn {
+        width: 60%;
+        font-size: 16px;
+    }
+}
+
+/* === Адаптация под ПК === */
+@media (min-width: 601px) {
+
+    #password {
+        font-size: 18px;
+        width: 300px;
+    }
+
+    .login100-form-btn {
+        width: 120px;
+        font-size: 18px;
+    }
+}
+
+</style>
 
 
 <br><br><br><br><br><br><br><br><br><br>
@@ -79,4 +155,5 @@ Password:<br>
 <br><br>
 
 </body>
+
 </html>
