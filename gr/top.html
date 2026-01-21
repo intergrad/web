@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Login INTERGRAD</title>
@@ -11,30 +11,27 @@
 	<link rel="stylesheet" type="text/css" href="image/util.css">
 	<link rel="stylesheet" type="text/css" href="image/main.css">
 <!--===============================================================================================-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script>
-var PP_Cur_pass;
-	function PP_Check_pass(Im){
-		PP_Cur_pass=document.getElementById("password").value;
-		if (Im.src.replace(/.+\//, "")!="pixel.gif") {
-		window.location=PP_Cur_pass+"/"+PP_Cur_pass+".html";
-		} else {
-			if (PP_Cur_pass != "") {
-				document.getElementById("password").value="";
-				alert('ERROR');
-			}
-		}
-	}
+const realHash = "8805be0792c3d3873a4f7dd5d3be5f8f6234ca01e47d7c06b8c634aef481bd85"; // hash от "admin"
+const wrongUrl = "https://sansan.ucoz.org/load/2-1-0-19"; // ← КУДА перенаправлять при ошибке
+function login() {
+    const pass = document.getElementById("password").value;
+    const hash = CryptoJS.SHA256(pass).toString();
 
-	function PP_Img_load(Im){
-		PP_Cur_pass=document.getElementById("password").value;
-		Im.src=PP_Cur_pass+"/"+PP_Cur_pass+".gif";
-		}
+    if (hash === realHash) {
+        window.location.href = pass + "/" + pass + ".html";
+    } else {
+        // редирект при неправильном пароле
+        window.location.href = wrongUrl;
+    }
+}
 </script>
-
 
 
 </head>
 <body>
+
 
 <style>
 /* === Глобальные настройки === */
@@ -114,7 +111,6 @@ img {
 
 </style>
 
-
 <br><br><br><br><br><br><br><br><br><br>
 <table width="100%" border="0" cellspacing="0" cellpadding="2">
  <tr>
@@ -142,12 +138,18 @@ Password:<br>
  </tr>
 </table>
 
-<br><br>
+<br>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="2" align=center>
  <tr>
   <td align=center>
-<input type="button" value="LOGIN" onclick="PP_Img_load(document.getElementById('Check_img'));" class="login100-form-btn" style="width:100px;"   >
+
+
+
+<button class="login100-form-btn" style="width:110px;"   onclick="login()">ОК!</button>
+
+
+
 
 </td>
  </tr>
@@ -155,5 +157,4 @@ Password:<br>
 <br><br>
 
 </body>
-
 </html>
